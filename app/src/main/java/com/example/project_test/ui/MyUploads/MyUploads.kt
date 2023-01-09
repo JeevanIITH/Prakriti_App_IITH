@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.project_test.MyApplication
 import com.example.project_test.R
 import com.example.project_test.databinding.FragmentHomeBinding
 import com.example.project_test.databinding.FragmentMyUploadsBinding
@@ -39,6 +40,7 @@ class MyUploads : Fragment() {
     private lateinit var storageReference: StorageReference
     private lateinit var ImageName: String
     private lateinit var ImageLocation: String
+
     companion object {
         fun newInstance() = MyUploads()
 
@@ -76,10 +78,11 @@ class MyUploads : Fragment() {
         recyclerView.adapter=adapter
     }
     var cnt=0
+    var username=MyApplication.Username
     private fun load_data()
     {
         var con=UploadImage.conclass()
-        var stmt="select image_url , image_name , image_location  from all_images;"
+        var stmt="select image_url , image_name , image_location  from all_images where username='$username';"
         var statement=con.createStatement()
         var rs=statement.executeQuery(stmt)
 

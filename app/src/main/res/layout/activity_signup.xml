@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B3EFB3"
     tools:context=".signup_activity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:text="@string/title_signup"
+        android:textColor="#C936E3"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +36,10 @@
             android:id="@+id/signup_text_input_username"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:backgroundTint="#A3A3A3"
             android:hint="@string/signup_hint_username"
-            android:textColor="#0C0C0C" />
+            android:textColor="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -53,17 +57,22 @@
             android:id="@+id/signup_text_input_email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:backgroundTint="#A3A3A3"
             android:hint="@string/signup_hint_email_address"
-            android:textColorHint="#616161" />
+            android:textColorHint="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/signup_text_input_create_pass"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#A3A3A3"
         android:ems="10"
         android:hint="@string/signup_hint_create_password"
         android:inputType="textPassword"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
         app:layout_constraintHorizontal_bias="0.0"
@@ -75,9 +84,12 @@
         android:id="@+id/signup_text_input_re_pass"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#A3A3A3"
         android:ems="10"
         android:hint="@string/signup_hint_Reenter_password"
         android:inputType="textPassword"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/signup_text_input_create_pass"
         app:layout_constraintHorizontal_bias="1.0"
@@ -101,7 +113,8 @@
         android:id="@+id/TextSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Have Account Signin"
+        android:text="Have Account ? Signin"
+        android:textColor="#008EFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
