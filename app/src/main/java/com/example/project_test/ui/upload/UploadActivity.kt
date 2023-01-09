@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.project_test.MainActivity
 import com.example.project_test.MyApplication
 import com.example.project_test.R
 import com.example.project_test.databinding.ActivityUploadBinding
@@ -45,6 +46,10 @@ class UploadActivity : AppCompatActivity() {
             Imagedate=binding.ImageDate.text.toString()
             ImageLocation=binding.InputImageLocation.text.toString()
             doUpload()
+        }
+        binding.buttonGobackHomeUpload.setOnClickListener {
+            var intent=Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }
 
 
@@ -87,6 +92,8 @@ class UploadActivity : AppCompatActivity() {
                     var query_execution=UploadImage.SendImage(con,statm)
                     //query_execution=UploadImage.SendImage(con,statm)
                     Toast.makeText(this, "Uploaded ", Toast.LENGTH_SHORT).show()
+                    var intent=Intent(this,MainActivity::class.java)
+                    startActivity(intent)
 
                 }
             }

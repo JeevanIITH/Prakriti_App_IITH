@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.project_test.databinding.ActivitySignupBinding
+import com.example.project_test.ui.upload.UploadImage
 import com.google.firebase.auth.FirebaseAuth
+import java.sql.SQLException
 
 class signup_activity : AppCompatActivity() {
     private lateinit var binding:ActivitySignupBinding
@@ -35,6 +37,25 @@ class signup_activity : AppCompatActivity() {
                             val intent = Intent(this,SignInActivity::class.java)
 
                             // upload to db
+                            //getting connection
+
+
+                            try {
+
+
+                                var con = UploadImage.conclass()
+                                var stmt = con.createStatement()
+                                var query =
+                                    "insert into accounts(username,email_id,password) values('$username','$email','$pass');"
+                                var rs=stmt.executeQuery(query)
+                            }
+                            catch(e:SQLException)
+                            {
+                                //Toast.makeText(this,e.message, Toast.LENGTH_SHORT).show()
+                                println(e.message)
+                            }
+
+
                             startActivity(intent)
                         }
                         else

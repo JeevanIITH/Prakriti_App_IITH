@@ -71,7 +71,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputName"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:hint="Rose" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -100,7 +101,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputImageLocation"
             android:layout_width="180dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:hint="Hostel Circle" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -130,7 +132,21 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputImageDate"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:hint="3 rd Jan" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonGobackHomeUpload"
+        android:layout_width="35dp"
+        android:layout_height="30dp"
+        android:foreground="@android:drawable/btn_dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

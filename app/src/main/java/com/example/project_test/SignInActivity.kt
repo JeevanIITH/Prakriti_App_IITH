@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.project_test.databinding.ActivitySignInBinding
+import com.example.project_test.ui.upload.UploadImage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import java.sql.SQLException
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
@@ -44,6 +46,23 @@ class SignInActivity : AppCompatActivity() {
 
 
                     MyApplication.Companion.email_id=inputemail
+                    try {
+
+
+                    var query="select username from accounts where accounts.email_id = '$inputemail' ;"
+                    var con=UploadImage.conclass()
+                    var stmt=con.createStatement()
+
+                    var rs=stmt.executeQuery(query)
+                    while (rs.next())
+                    {
+                        MyApplication.Companion.Username = rs.getString("username").toString()
+                    }
+
+                    }
+                    catch (e:SQLException){
+                        println(e.message)
+                    }
                     startActivity(intent)
                 }
                 else

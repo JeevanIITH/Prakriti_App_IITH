@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         var nv=findViewById<NavigationView>(R.id.nav_view)
         var hv=nv.getHeaderView(0)
         var user_text=hv.findViewById<TextView>(R.id.Username_text_view)
-        user_text.setText("Default Username")
+        user_text.setText(MyApplication.Username)
         var email_text=hv.findViewById<TextView>(R.id.email_id_text_view)
         email_text.setText(MyApplication.email_id)
 
